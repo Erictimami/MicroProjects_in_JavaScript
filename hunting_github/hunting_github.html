@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+            <!-- my own css file link in the last position to be priority--> 
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script >
+    $(document).ready(function(){
+
+        $('button').click(function(){
+                console.log('test')
+                var name;
+                $.get("https://api.github.com/users/EricTimami", display_name);
+                
+                function display_name(data){ 
+                        console.log(data);
+                        $('.names').html(data.login);                      
+                };
+                
+        });  
+    });  
+</script>
+    <style>
+        body{
+                margin: center;
+                text-align: center;
+                width: 500px;
+                height: 500px;
+                }
+
+    </style>
+</head>
+<body>
+        <div class="form-group row">
+                <button >Submit</button>
+        </div>
+        <div class="names"> 
+
+        </div>
+</body>
+</html>
